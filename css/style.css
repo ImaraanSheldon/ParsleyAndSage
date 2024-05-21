@@ -120,5 +120,17 @@ img{
 .neighbor-border{
   border-left: 2px solid var(--color-text);
 }
+.nika{
+  color: var(--color-bg-textAlt);
+  background-color: var(--color-text);
+}
 /* Navbar (end) */
+/* Hero (start) */
+
+.hero{
+  background-color: var(--color-Hero);
+}
+
+
+/* Hero (end) */
 
