@@ -36,11 +36,13 @@ a{
 }
 img{
     width: 100%;
+    max-height: 400px;
 }
 .full-body{
     min-height: 80vh;
     max-height: auto;
     border-bottom: 1px solid var(--color-text);
+    margin-bottom: 2rem;
 }
 /* Universal Declarations (end) */
 /* Logo (start) */
@@ -106,6 +108,10 @@ img{
   .slider.round:before {
     border-radius: 50%;
   }
+  .ps{
+    width:5rem;
+    scale: 1/1;
+  }
 /* Logo (end) */
 /* Navbar (start) */
 @media screen and (min-width: 992px){
@@ -133,4 +139,8 @@ img{
 
 
 /* Hero (end) */
-
+/* Main Content (start) */
+.framework{
+  border: 5px solid var(--color-Hero);
+}
+/* Main Content (end) */
