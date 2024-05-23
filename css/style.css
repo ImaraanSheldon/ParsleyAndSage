@@ -36,13 +36,13 @@ a{
 }
 img{
     width: 100%;
-    max-height: 400px;
+    height: 480px;
 }
 .full-body{
     min-height: 80vh;
     max-height: auto;
     border-bottom: 1px solid var(--color-text);
-    margin-bottom: 2rem;
+    padding-bottom: 2rem;
 }
 /* Universal Declarations (end) */
 /* Logo (start) */
@@ -110,7 +110,8 @@ img{
   }
   .ps{
     width:5rem;
-    scale: 1/1;
+    height: 5rem;
+    border: 2px solid var(--color-text);
   }
 /* Logo (end) */
 /* Navbar (start) */
@@ -141,6 +142,26 @@ img{
 /* Hero (end) */
 /* Main Content (start) */
 .framework{
-  border: 5px solid var(--color-Hero);
+  border: 5px solid var(--color-text);
+  background-color: var(--color-bg-textAlt);
+  
+  & img{
+    border:3px solid var(--color-text);
+  }
+}
+.Featured{
+  background-color: var(--color-bgAlt-textAltHover);
 }
 /* Main Content (end) */
+/* About (start)*/
+/* spaciousness (start) */
+.inner{
+  color: var(--color-bg-textAlt);
+}
+.vee{
+  color: var(--color-bgAlt-textAltHover);
+}
+/* spaciousness (end) */
+
+
+/* About (end)*/
