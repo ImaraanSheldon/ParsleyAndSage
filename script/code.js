@@ -13,3 +13,7 @@ function swapCSS(newCSS) {
     let stylesheet = document.getElementById('stylesheet');
     stylesheet.href = newCSS;
 }
+
+function artworkTemplate(){
+
+}
