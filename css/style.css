@@ -145,6 +145,10 @@ img{
 .nika{
   color: var(--color-bg-textAlt);
   background-color: var(--color-text);
+
+  &:active{
+    color: var(--color-bg-textAlt);
+  }
 }
 /* Navbar (end) */
 
