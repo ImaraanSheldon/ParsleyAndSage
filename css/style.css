@@ -174,7 +174,6 @@ img{
 }
 /* Hero (end) */
 
-
 /* Main Content (start) */
 /* Featured Art */
 .framework{
@@ -207,6 +206,11 @@ img{
     color: var(--color-bgAlt-textAltHover);
   }
   
+}
+/* footer */
+.min-footer{
+  min-height:20vh;
+  background-color: var(--color-footer-accent);
 }
 
 /* Main Content (end) */
