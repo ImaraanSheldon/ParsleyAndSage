@@ -213,6 +213,10 @@ img{
   background-color: var(--color-footer-accent);
 }
 
+.socials a{
+  font-size: 32px;
+}
+
 /* Main Content (end) */
 
 
