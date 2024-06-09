@@ -34,6 +34,7 @@ let products = JSON.parse(localStorage.getItem("products")) || [
     artwork_Target: "Highlights",
     button_View: "View Artwork",
     button_Add: "Add to Cart",
+    target: "Highlights",
   },
   {
     id: 2,
@@ -173,8 +174,8 @@ function recentProducts() {
             <h5>By: ${product.artwork_Artist}</h5>
             <h5>Price: $${product.artwork_Price}</h5>
             <div class="btn-card mb-2">
-              <button src="#" class="shattered-glass-button">${product.button_View}</button>
-              <button src="#" class="shattered-glass-button">${product.button_Add}</button>
+              <button src="#" class="shattered-glass-button" onclick='addToCart(${JSON.stringify(product)})'>${product.button_View}</button>
+              <button src="#" class="shattered-glass-button" onclick='addToCart(${JSON.stringify(product)})'>${product.button_Add}</button>
             </div>
           </div>
         </div>
