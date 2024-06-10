@@ -64,6 +64,11 @@
                 </ul>
               </div>
             </div>
+
+              <div class="px-3">
+                <label counter>0</label>
+              </div>
+            
             <a class="neighbor-border px-4 py-3 mx-auto navbar-brand d-lg-block d-none" href="#">Login</a>
     
             <a class="neighbor-border px-4 py-3 nika mx-auto navbar-brand d-lg-block d-none" href="#">Sign Up</a>
@@ -71,13 +76,18 @@
 
           <main>
             <section class="full-body Featured">
-              <div class="d-flex justify-content-center align-items-center">
-                <input type="search" placeholder="Search Product Name" searchProduct>
-                <button type="button" class="btn btn-sucess" sorting>Sort</button>
-              </div>
-              <h2 class="pt-2">view products</h2>
-                <div id="product-container" class="row g-2"></div>
-                <div counter></div>
+              <h2 class="text-center display-5 fw-bold">View Products</h2>
+
+              <!-- Search input -->
+              <input type="text" id="searchInput" placeholder="Search products">
+
+              <!-- Sort options -->
+              <select id="sortSelect">
+                <option value="name">Sort by Name</option>
+                <option value="price">Sort by Price</option>
+              </select>
+
+                <div id="product-container" class="row g-2 p-5"></div>
             </div>
 
           </main>

@@ -28,6 +28,7 @@ body{
 }
 h1,h2,h3,h4,h5{
     font-family: var(--font-syne);
+    color: var(--color-text);
 }
 a{
     text-decoration: none;
@@ -144,18 +145,34 @@ img{
 .nika{
   color: var(--color-bg-textAlt);
   background-color: var(--color-text);
+
+  &:active{
+    color: var(--color-bg-textAlt);
+  }
 }
 /* Navbar (end) */
 
 /* Hero (start) */
-
 .hero{
   background-color: var(--color-Hero);
 }
-
-
+.shattered-hero-button {
+  background: linear-gradient(45deg,var(--color-bgAlt-textAltHover)  50%,var(--color-text) 50%);
+  background-size: 200% 100%;
+  color: var(--color-text);
+  border: none;
+  padding: 10px 25px;
+  border-radius: 10px;
+  transition: background-position 0.5s ease;
+}
+.shattered-hero-button:hover {
+  background-position: -100% 0;
+  color: var(--color-bg-textAlt);
+}
+.border-hero{
+  border-right: 5px solid var(--color-text);
+}
 /* Hero (end) */
-
 
 /* Main Content (start) */
 /* Featured Art */
@@ -184,7 +201,16 @@ img{
 /* The Story */
 .theStory{
   background-color: var(--color-contentBg);
-  color: var(--color-bg-textAlt);
+
+  & h1,h2,h3,h4,h5{
+    color: var(--color-bgAlt-textAltHover);
+  }
+  
+}
+/* footer */
+.min-footer{
+  min-height:20vh;
+  background-color: var(--color-footer-accent);
 }
 
 /* Main Content (end) */
