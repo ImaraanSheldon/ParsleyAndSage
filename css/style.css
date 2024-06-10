@@ -221,14 +221,9 @@ img{
 
 
 /* About (start)*/
-/* spaciousness (start) */
-.inner{
-  color: var(--color-bg-textAlt);
+.about-1{
+  background-color: var(--color-bgAlt-textAltHover);
 }
-.vee{
-  color: var(--color-bgAlt-textAltHover);
-}
-/* spaciousness (end) */
 
 
 /* About (end)*/

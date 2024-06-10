@@ -80,8 +80,10 @@ document.addEventListener("DOMContentLoaded", function () {
      let sortedProducts;
      if (sortBy === 'name') {
          sortedProducts = products.slice().sort((a, b) => a.artwork_Name.localeCompare(b.artwork_Name));
-     } else if (sortBy === 'price') {
-         sortedProducts = products.slice().sort((a, b) => a.artwork_Price - b.artwork_Price);
+     } else if (sortBy === 'priceDes') {
+         sortedProducts = products.slice().sort((a, b) => b.artwork_Price - a.artwork_Price);
+     }else if(sortBy === 'priceAsc'){
+        sortedProducts = products.slice().sort((a, b) => a.artwork_Price - b.artwork_Price);
      }
      displayProducts(sortedProducts);
  });
