@@ -13,11 +13,11 @@ if (storedItems) {
 
 // Function to display products in the cart
 function displayCartProducts() {
-    const cartProductsContainer = document.getElementById('cartProducts');
+    let cartProductsContainer = document.getElementById('cartProducts');
     cartProductsContainer.innerHTML = ''; // Clear previous content
     
     checkoutItems.forEach((product, index) => {
-        const productElement = document.createElement('div');
+        let productElement = document.createElement('div');
         productElement.classList.add('product');
         
         // Add product details to the product element
