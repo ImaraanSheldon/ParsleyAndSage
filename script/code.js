@@ -188,8 +188,12 @@ function recentProducts() {
             <h5>By: ${product.artwork_Artist}</h5>
             <h5>Price: $${product.artwork_Price}</h5>
             <div class="btn-card mb-2">
-              <button src="#" class="shattered-glass-button" onclick='addToCart(${JSON.stringify(product)})'>${product.button_View}</button>
-              <button src="#" class="shattered-glass-button" onclick='addToCart(${JSON.stringify(product)})'>${product.button_Add}</button>
+              <button src="#" class="shattered-glass-button" onclick='addToCart(${JSON.stringify(
+                product
+              )})'>${product.button_View}</button>
+              <button src="#" class="shattered-glass-button" onclick='addToCart(${JSON.stringify(
+                product
+              )})'>${product.button_Add}</button>
             </div>
           </div>
         </div>
@@ -210,8 +214,8 @@ recentProducts();
 function linganiProducts() {
   try {
     // let latestProducts = products.slice(0, 4); // Slice the array to get the latest 3 products
-    let showcase = products.filter((X) =>{
-      return X.artwork_Target === "showcase"
+    let showcase = products.filter((X) => {
+      return X.artwork_Target === "showcase";
     });
     let wrapper = document.querySelector("[data-artist]");
 
@@ -242,6 +246,19 @@ function linganiProducts() {
   }
 }
 linganiProducts();
+
+    // Add to cart function
+    function addToCart(product) {
+      checkoutItems.push(product);
+      localStorage.setItem('checkout', JSON.stringify(checkoutItems));
+      document.querySelector('[counter]').textContent = checkoutItems.length;
+  }
+
+function redirectToCart() {
+  // Redirect to the cart page (replace "cart.html" with your actual cart page URL)
+  window.location.href = "../pages/cart.html";
+}
+
 
 //   Date on footer
 document.querySelector("[current-year]").textContent =

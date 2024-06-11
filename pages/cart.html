@@ -70,26 +70,15 @@
           </nav>
 
           <main>
-            <h1>Shopping Cart</h1>
-    <div class="product-list">
-        <div class="product">
-            <p>Product 1</p>
-            <button onclick="addToCart('Product 1')">Add to Cart</button>
-        </div>
-        <div class="product">
-            <p>Product 2</p>
-            <button onclick="addToCart('Product 2')">Add to Cart</button>
-        </div>
-        <div class="product">
-            <p>Product 3</p>
-            <button onclick="addToCart('Product 3')">Add to Cart</button>
-        </div>
-    </div>
-    <div class="cart">
-        <h2>Cart</h2>
-        <p>Items in cart: <span counter="true" class="cart-counter">0</span></p>
-        <button onclick="viewCart()">View Cart</button>
-    </div>
+    
+<!-- Cart Products -->
+<div id="cartProducts" class="container">
+  <!-- Products will be dynamically added here -->
+</div>
+
+<!-- Purchase Button -->
+<button id="purchaseButton" class="purchase-button">Purchase</button>
+
           </main>
     
           <footer class="min-footer">

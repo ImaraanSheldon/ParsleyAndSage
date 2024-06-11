@@ -1,20 +1,78 @@
-// Add to cart function
-function addToCart(product) {
-    let checkoutItems = JSON.parse(localStorage.getItem('checkout')) || [];
-    checkoutItems.push(product);
+// Retrieve cart items from localStorage
+let checkoutItems = [];
+
+// Load items from localStorage if they exist
+const storedItems = localStorage.getItem('checkout');
+if (storedItems) {
+    try {
+        checkoutItems = JSON.parse(storedItems);
+    } catch (error) {
+        console.error('Error parsing checkout items from localStorage:', error);
+    }
+}
+
+// Function to display products in the cart
+function displayCartProducts() {
+    const cartProductsContainer = document.getElementById('cartProducts');
+    cartProductsContainer.innerHTML = ''; // Clear previous content
+    
+    checkoutItems.forEach((product, index) => {
+        const productElement = document.createElement('div');
+        productElement.classList.add('product');
+        
+        // Add product details to the product element
+        productElement.innerHTML = `
+            <img src="${product.artwork_Img}" alt="${product.artwork_Name}">
+            <h3>${product.artwork_Name}</h3>
+            <p>By: ${product.artwork_Artist}</p>
+            <p>Price: $${product.artwork_Price}</p>
+            <button class="delete-button" onclick="deleteProduct(${index})">Delete</button>
+        `;
+        
+        cartProductsContainer.appendChild(productElement);
+    });
+}
+
+// Function to delete a product from the cart
+function deleteProduct(index) {
+    checkoutItems.splice(index, 1);
     localStorage.setItem('checkout', JSON.stringify(checkoutItems));
-    document.querySelector('[counter]').textContent = checkoutItems.length || 0;
-    console.log(product);
+    displayCartProducts(); // Refresh the display
+    console.log('Product deleted. Updated checkout items:', checkoutItems);
+}
+// Function to handle the purchase process
+function purchase() {
+    if (checkoutItems.length === 0) {
+        console.error('Cannot proceed with purchase: Cart is empty.');
+        alert('Your cart is empty. Please add items before proceeding with the purchase.');
+        return;
+    }
+
+    // Ask for confirmation before proceeding with the purchase
+    const confirmPurchase = confirm('Are you sure you want to proceed with the purchase?');
+    if (!confirmPurchase) {
+        console.log('Purchase canceled.');
+        return;
+    }
+
+    // Simulate purchase process
+    // For demonstration, let's just clear the cart items
+    try {
+        checkoutItems = [];
+        localStorage.removeItem('checkout');
+        displayCartProducts(); // Refresh the display
+        console.log('Purchase successful. Cart items cleared.');
+        alert('Thank you for your purchase!');
+    } catch (error) {
+        console.error('Error processing purchase:', error);
+        alert('There was an error processing your purchase. Please try again later.');
+    }
 }
 
-// Function to view cart
-function viewCart() {
-    let checkoutItems = JSON.parse(localStorage.getItem('checkout')) || [];
-    alert
-}
+// Call the purchase function when the purchase button is clicked
+const purchaseButton = document.getElementById('purchaseButton');
+purchaseButton.addEventListener('click', purchase);
 
-// Update the cart counter on page load
-document.addEventListener('DOMContentLoaded', () => {
-    let checkoutItems = JSON.parse(localStorage.getItem('checkout')) || [];
-    document.querySelector('[counter]').textContent = checkoutItems.length || 0;
-});
+
+// Call the function to display cart products
+displayCartProducts();

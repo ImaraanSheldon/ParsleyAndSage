@@ -18,51 +18,61 @@ document.addEventListener("DOMContentLoaded", function () {
   function artworkTemplate() {}
   // CSS swap (end)
 
- // Retrieve products from localStorage
- let products = JSON.parse(localStorage.getItem("products"));
+    // Retrieve products from localStorage
+    let products = JSON.parse(localStorage.getItem("products"));
 
- // Check if products exist
- if (!products) {
-     console.error("No products found in localStorage");
- }
+    // Check if products exist
+    if (!products) {
+        console.error("No products found in localStorage");
+    }
 
- // Example function to display products
- function displayProducts(products) {
-     const container = document.getElementById('product-container');
-     if (!container) return;
+    // Retrieve cart items from localStorage
+    let checkoutItems = JSON.parse(localStorage.getItem('checkout')) || [];
 
-     container.innerHTML = ''; // Clear previous content
+    // Display cart count
+    document.querySelector('[counter]').textContent = checkoutItems.length || 0;
 
-     products.forEach(product => {
-         container.innerHTML += `
-             <div class="col-lg-3 col-md-6">
-                 <div class="framework rounded-1">
-                     <img src='${product.artwork_Img}'>
-                     <div class="textContent text-center">
-                         <h4 class="mt-3">${product.artwork_Name}</h4>
-                         <h5>By: ${product.artwork_Artist}</h5>
-                         <h5>Price: $${product.artwork_Price}</h5>
-                         <div class="btn-card mb-2">
-                             <button class="shattered-glass-button" onclick='addToCart(${JSON.stringify(product)})'>${product.button_View}</button>
-                             <button type="button" class="shattered-glass-button" onclick='addToCart(${JSON.stringify(product)})'>${product.button_Add}</button>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-         `;
-     });
- }
+    // Add to cart function
+    function addToCart(product) {
+        checkoutItems.push(product);
+        localStorage.setItem('checkout', JSON.stringify(checkoutItems));
+        document.querySelector('[counter]').textContent = checkoutItems.length;
+    }
 
- displayProducts(products);
+    // Function to redirect to the cart page
+    function redirectToCart() {
+        // Redirect to the cart page (replace "cart.html" with your actual cart page URL)
+        window.location.href = "../pages/cart.html";
+    }
 
- // Add to cart function
- function addToCart(product) {
-     let checkoutItems = JSON.parse(localStorage.getItem('checkout')) || [];
-     checkoutItems.push(product);
-     localStorage.setItem('checkout', JSON.stringify(checkoutItems));
-     document.querySelector('[counter]').textContent = checkoutItems.length || 0;
-     console.log(product);
- }
+    // Example function to display products
+    function displayProducts(products) {
+        const container = document.getElementById('product-container');
+        if (!container) return;
+
+        container.innerHTML = ''; // Clear previous content
+
+        products.forEach(product => {
+            container.innerHTML += `
+                <div class="col-lg-3 col-md-6">
+                    <div class="framework rounded-1">
+                        <img src='${product.artwork_Img}'>
+                        <div class="textContent text-center">
+                            <h4 class="mt-3">${product.artwork_Name}</h4>
+                            <h5>By: ${product.artwork_Artist}</h5>
+                            <h5>Price: $${product.artwork_Price}</h5>
+                            <div class="btn-card mb-2">
+                                <button class="shattered-glass-button" onclick='addToCart(${JSON.stringify(product)})'>${product.button_View}</button>
+                                <button type="button" class="shattered-glass-button" onclick='addToCart(${JSON.stringify(product)})'>${product.button_Add}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+    }
+
+    displayProducts(products);
 
  // Search function
  document.getElementById('searchInput').addEventListener('input', function() {
