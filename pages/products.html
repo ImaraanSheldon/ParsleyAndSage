@@ -78,16 +78,18 @@
             <section class="full-body Featured">
               <h2 class="text-center display-5 fw-bold">View Products</h2>
 
-              <!-- Search input -->
-              <input type="text" id="searchInput" placeholder="Search products">
-
-              <!-- Sort options -->
-              <select id="sortSelect">
-                <option value="default">Sort by default</option>
-                <option value="name">Sort by Name</option>
-                <option value="priceDes">Sort by Price Descending</option>
-                <option value="priceAsc">Sort by Price Ascending</option>
-              </select>
+              <div class="d-flex justify-content-center">
+                <!-- Search input -->
+                <input class="search-input m-2 rounded-pill opt-color" type="text" id="searchInput" placeholder="Search Products or Artists">
+  
+                <!-- Sort options -->
+                <select class="m-2 rounded-pill opt-color" id="sortSelect">
+                  <option value="default">Sort by default</option>
+                  <option value="name">Sort by Name</option>
+                  <option value="priceDes">Sort by Price Descending</option>
+                  <option value="priceAsc">Sort by Price Ascending</option>
+                </select>
+              </div>
 
                 <div id="product-container" class="row g-2 p-5"></div>
             </div>

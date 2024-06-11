@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
      let sortedProducts;
     //  console.log(sortBy)
      if (sortBy === 'default') {
-         sortedProducts = products.slice().sort((a, b) => a.id-b.id);
+         sortedProducts = products.slice().sort((a, b) => a.id - b.id);
      }else if(sortBy === 'name'){
             sortedProducts = products.slice().sort((a, b) => a.artwork_Name.localeCompare(b.artwork_Name));
      }else if (sortBy === 'priceDes') {
