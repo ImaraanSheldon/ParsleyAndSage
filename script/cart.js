@@ -14,9 +14,13 @@ function displayCartProducts() {
     let cartProductsContainer = document.getElementById('cartProducts');
     cartProductsContainer.innerHTML = ''; // Clear previous content
     
-    // Create a table element
+    // Create a table element with Bootstrap classes for responsiveness
     let table = document.createElement('table');
-    table.innerHTML = `
+    table.classList.add('table', 'table-bordered', 'table-responsive');
+
+    // Create table header
+    let thead = document.createElement('thead');
+    thead.innerHTML = `
         <tr>
             <th>Image</th>
             <th>Name</th>
@@ -26,9 +30,12 @@ function displayCartProducts() {
             <th>Action</th>
         </tr>
     `;
+    table.appendChild(thead);
 
     // Aggregate items by name, artist, and price
     let aggregatedItems = {};
+
+    let totalPrice = 0;
 
     checkoutItems.forEach((product, index) => {
         let key = `${product.artwork_Name}|${product.artwork_Artist}|${product.artwork_Price}`;
@@ -39,7 +46,7 @@ function displayCartProducts() {
         }
     });
 
-    let totalPrice = 0;
+    let tbody = document.createElement('tbody');
 
     Object.keys(aggregatedItems).forEach(key => {
         let product = aggregatedItems[key];
@@ -47,23 +54,26 @@ function displayCartProducts() {
         
         // Add product details to the row
         row.innerHTML = `
-            <td><img class="cart-img" src="${product.artwork_Img}" alt="${product.artwork_Name}" width="50"></td>
-            <td>${product.artwork_Name}</td>
-            <td>${product.artwork_Artist}</td>
-            <td>$${product.artwork_Price}</td>
-            <td>${product.quantity}</td>
-            <td><button class="delete-button" onclick="deleteProduct(${product.index})">Delete</button></td>
+            <td class="text-center"><img class="cart-img" src="${product.artwork_Img}" alt="${product.artwork_Name}" width="50"></td>
+            <td class="text-center">${product.artwork_Name}</td>
+            <td class="text-center">${product.artwork_Artist}</td>
+            <td class="text-center">$${product.artwork_Price}</td>
+            <td class="text-center">${product.quantity}</td>
+            <td class="text-center"><button class="btn btn-danger delete-button" onclick="deleteProduct(${product.index})">Delete</button></td>
         `;
         
-        table.appendChild(row);
+        tbody.appendChild(row);
         totalPrice += product.artwork_Price * product.quantity;
     });
+
+    table.appendChild(tbody);
 
     // Append the table to the container
     cartProductsContainer.appendChild(table);
     
     // Display the total price
-    let totalPriceElement = document.createElement('p');
+    let totalPriceElement = document.createElement('div');
+    totalPriceElement.classList.add('mx-auto', 'font-weight-bold');
     totalPriceElement.innerHTML = `Total Price: $${totalPrice}`;
     cartProductsContainer.appendChild(totalPriceElement);
 }
@@ -99,11 +109,7 @@ function purchase() {
     if (!confirmPurchase) {
         console.log('Purchase canceled.');
         return;
-    }
-
-    // Simulate purchase process
-    // For demonstration, let's just clear the cart items
-    try {
+    }try {
         checkoutItems = [];
         localStorage.removeItem('checkout');
         displayCartProducts(); // Refresh the display
