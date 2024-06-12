@@ -96,6 +96,9 @@ function deleteProduct(index) {
     displayCartProducts(); // Refresh the display
     console.log('Product deleted. Updated checkout items:', checkoutItems);
 }
+
+// Chany
+
 // Function to handle the purchase process
 function purchase() {
     if (checkoutItems.length === 0) {
