@@ -21,7 +21,7 @@
     <!-- My Css (end) -->
 </head>
 <body>
-  <section class="py-3 logo">
+  <section class="py-3 logo"id='nav'>
     <div class="container-fluid row align-items-center">
       <div class="col-sm-2 d-flex justify-content-center align-items-center">
         <a href="#"><img class="ps rounded-circle" src="https://imaraansheldon.github.io/allImages/ColorMyWorld/Logo/ColourMyWorld_Parsley&Sage_2.png" alt="Parsley&Sage"></a>
@@ -56,10 +56,13 @@
                 <a class="nav-link" href="pages/products.html">Products</a>
               </li>
               <li class="nav-item mx-lg-2">
+                <a class="nav-link" href="pages/cart.html">Cart</a>
+              </li>
+              <li class="nav-item mx-lg-2">
                 <a class="nav-link" href="pages/about.html">About</a>
               </li>
               <li class="nav-item mx-lg-2">
-                <a class="nav-link" href="pages/cart.html">Cart</a>
+                <a class="nav-link" href="pages/contact.html">Contact</a>
               </li>
               <li class="nav-item mx-lg-2">
                 <a class="nav-link" href="pages/admin.html">Admin</a>
@@ -76,13 +79,13 @@
         <section class="full-body hero">
           <div class="row">
             <div class="col-md-1"></div>
-            <div class="col-md-5 d-flex flex-column justify-content-center align-items-center">
-              <h4 class="display-2 text-uppercase fw-bold border-hero text-start">Find a piece thats a part of you.</h4>
-              <button src="#" class="shattered-hero-button me-auto">View Artwork</button>
+            <div class="col-md-5 col-sm-12 d-flex flex-column justify-content-center align-items-center">
+              <h4 class="display-2 text-uppercase fw-bolder text-md-start text-sm-center">Find a piece thats a part of you.</h4>
+              <button src="#" class="shattered-hero-button me-md-auto">View Artwork</button>
             </div>
-            <div class="col-md-1"></div>
-            <div class="col-md-4 pt-4"><img src="https://imaraansheldon.github.io/allImages/ColorMyWorld/Expressivism/herInAfrica.jpg" alt="Hero"></div>
-            <div class="col-md-1"></div>
+            <div class="col-md-1 col-sm-3"></div>
+            <div class="col-md-4 col-sm-6 py-3 mt-4 border-hero"><img src="https://imaraansheldon.github.io/allImages/ColorMyWorld/Expressivism/herInAfrica.jpg" alt="Hero"></div>
+            <div class="col-md-1 col-sm-3"></div>
           </div>
         </section>
 
@@ -95,10 +98,12 @@
           <h2 class="pt-2 display-5">This Weeks Highlighted Artist:</h2>
           <div class="row gy-2 p-2">
             <div class="col-lg-1 sw-colour"></div>
-          <div class="col-lg-4 col-md-7 mihleImg"><img class="rounded-2" src="https://imaraansheldon.github.io/allImages/ColorMyWorld/Graphic_Design/MihleLingani_TheArtist.jpg" alt="mihleLingani"></div>
-          <div class="col-lg-6 col-md-5 d-flex flex-column justify-content-center align-items-start sw-colour">
+          <div class="col-lg-4 col-md-4 mihleImg"><img class="rounded-2" src="https://imaraansheldon.github.io/allImages/ColorMyWorld/Graphic_Design/MihleLingani_TheArtist.jpg" alt="mihleLingani"></div>
+          <div class="col-lg-6 col-md-8 d-flex flex-column justify-content-center align-items-start sw-colour">
             <h2 class="display-5 align-self-center">Mihle Lingani</h2>
-            <h4>Born in October 2002. I attended Lady Grey Arts Academy in 2017, which as when I was introduced to Design. I spent about a year there learning key structures like design, colour theory and about great Designers & Artists of South Africa. My teacher and the outstanding designers we learnt about at that time greatly inspired me to continue being passionate about design. In 2018 I moved to Cape Town, which unfortunately meant I no longer do Design. Rather for the next 2 years I did Visual Arts at Voortrekker High School</h4>
+            <p class="lead black-text">Born in October 2002. I attended Lady Grey Arts Academy in 2017, which as when I was introduced to Design. I spent about a year there learning key structures like design, colour theory and about great Designers & Artists of South Africa. My teacher and the outstanding designers we learnt about at that time greatly inspired me to continue being passionate about design. In 2018 I moved to Cape Town, which unfortunately meant I no longer do Design. Rather for the next 2 years I did Visual Arts at Voortrekker High School
+            <p>
+            <p class="lead black-text">-Graphic Designer, Artist.</p>
           </div>
           <div class="col-lg-1 sw-colour"></div>
 
@@ -118,6 +123,8 @@
           <span counter></span>
           <i class="las la-shopping-cart"></i>
         </div>
+
+        <div id="artworkModals"></div>
     </main>
 
     <footer class="min-footer">
@@ -126,34 +133,37 @@
         <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
           <h5 class="fw-bold">INFORMATION</h3>
             <h5>___</h5>
-            <p><a href="#">Pages</a></p><!--To navbar-->
-            <p><a href="#">Our Team</a></p><!--To about-->
-            <p><a href="#"></a>Our Products</p><!--To products-->
+            <p><a href="#nav">Pages</a></p><!--To navbar-->
+            <p><a href="pages/about.html">Our Team</a></p><!--To about-->
+            <p><a href="pages/products.html">Our Products</a></p><!--To products-->
         </div>
 
         <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
           <h5 class="fw-bold">RESOURCES</h3>
             <h5>___</h5>
+            <p><a href="#">Art Tutorials</a></p><!--Empty-->
+            <p><a href="#">Buying Guideds</a></p><!--Empty-->
+            <p><a href="pages/about.html">Community</a></p><!--To About-->
         </div>
 
         <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
           <h5 class="fw-bold">HELP</h3>
             <h5>___</h5>
-            <p><a href="#">Send Us An Email</a></p><!--To navbar-->
-            <p><a href="#">Login</a></p><!--To about-->
-            <p><a href="#"></a>Sign Up</p><!--To products-->
+            <p><a href="pages/contact.html">Send Us An Email</a></p><!--To contact-->
+            <p><a href="#">Login</a></p><!--Empty-->
+            <p><a href="#">Sign Up</a></p><!--Empty-->
         </div>
 
         <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
           <h5 class="fw-bold">CONTACT US</h3>
             <h5>___</h5>
-            <p class="text-center"><a href="#">Contact us if you need help with ANYTHING</a></p>
+            <p class="text-center"><a href="pages/contact.html">Contact us if you need help with ANYTHING</a></p>
             <p>+27 420-911-6969</p>
             <div class="socials">
-              <a href="#"><i class="lab la-facebook-square px-1"></i></a>
-              <a href=""><i class="lab la-twitter-square px-1"></i></a>
-              <a href=""><i class="lab la-instagram px-1"></i></a>
-            <a href=""><i class="lab la-pinterest-square px-1"></i></a>
+              <a href="https://facebook.com"><i class="lab la-facebook-square px-1"></i></a>
+              <a href="https://twitter.com"><i class="lab la-twitter-square px-1"></i></a>
+              <a href="https://instagram.com"><i class="lab la-instagram px-1"></i></a>
+            <a href="https://pinterest.com"><i class="lab la-pinterest-square px-1"></i></a>
               </div>
         </div>
 

@@ -139,6 +139,7 @@ img{
         border-right: 2px solid var(--color-text);
         border-bottom: 2px solid var(--color-text);
     }
+
 }
 .neighbor-border{
   border-left: 2px solid var(--color-text);
@@ -153,6 +154,7 @@ img{
 }
 .cart-pill{
   background-color: var(--color-icons);
+  border: 2px solid var(--color-bg-textAlt);
   font-size: 2rem;
   width: auto;
   position:fixed;
@@ -182,7 +184,7 @@ img{
   color: var(--color-bg-text);
 }
 .border-hero{
-  border-right: 5px solid var(--color-text);
+  border: 5px solid var(--color-text);
 }
 /* Hero (end) */
 
@@ -258,6 +260,9 @@ img{
 .white-text{
   color: var(--color-bg-textAlt);
 }
+.black-text{
+  color: var(--color-text);
+}
 /* About (end)*/
 /* Cart (start) */
 /* Add your CSS styles here */
@@ -296,3 +301,12 @@ td,th{
   border: 1px solid var(--color-text);
 }
 /* Cart (end) */
+/* Modal(start) */
+.modal{
+  width: 60vw;
+  margin-left: 20vw;
+}
+.modal-img{
+  width: 50%;
+}
+/* Modal(end) */
