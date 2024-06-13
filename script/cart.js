@@ -1,3 +1,5 @@
+
+  
 // Retrieve cart items from localStorage
 let checkoutItems = [];
 
@@ -131,3 +133,49 @@ purchaseButton.addEventListener('click', purchase);
 
 // Call the function to display cart products
 displayCartProducts();
+
+    // Show or hide empty cart notification
+    const emptyCartNotification = document.getElementById("emptyCartNotification");
+    if (checkoutItems.length === 0) {
+        emptyCartNotification.style.display = "block";
+    } else {
+        emptyCartNotification.style.display = "none";
+    }
+
+
+// Function to handle the purchase process
+function purchase() {
+    if (checkoutItems.length === 0) {
+        console.error('Cannot proceed with purchase: Cart is empty.');
+        alert('Your cart is empty. Please add items before proceeding with the purchase.');
+        return;
+    }
+
+    // Ask for confirmation before proceeding with the purchase
+    const confirmPurchase = confirm('Are you sure you want to proceed with the purchase?');
+    if (!confirmPurchase) {
+        console.log('Purchase canceled.');
+        return;
+    }
+
+    try {
+        checkoutItems = [];
+        localStorage.removeItem('checkout');
+        displayCartProducts(); // Refresh the display
+        console.log('Purchase successful. Cart items cleared.');
+        alert('Thank you for your purchase!');
+
+        // Show purchase options
+        const purchaseOptions = document.getElementById("purchaseOptions");
+        purchaseOptions.style.display = "block";
+    } catch (error) {
+        console.error('Error processing purchase:', error);
+        alert('There was an error processing your purchase. Please try again later.');
+    }
+}
+
+// Event listener for the continue shopping button
+document.getElementById("continueShoppingBtn").addEventListener("click", () => {
+    // Redirect to the products page (replace "products.html" with your actual products page URL)
+    window.location.href = "products.html";
+});

@@ -1,22 +1,4 @@
-// CSS swap (start)
-document.addEventListener("DOMContentLoaded", function () {
-  let checkbox = document.getElementById("chek");
-  checkbox.addEventListener("change", function () {
-    if (this.checked) {
-      swapCSS("css/styleDark.css");
-    } else {
-      swapCSS("css/style.css");
-    }
-  });
-});
 
-function swapCSS(newCSS) {
-  let stylesheet = document.getElementById("stylesheet");
-  stylesheet.href = newCSS;
-}
-
-function artworkTemplate() {}
-// CSS swap (end)
 
 // Retrieve products from localStorage or initialize if not present
 let products = JSON.parse(localStorage.getItem("products")) || [

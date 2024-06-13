@@ -27,14 +27,6 @@
           <div class="col-sm-8 text-center d-sm-block d-none">
             <h1 class="display-5 fw-bold">Colour My World</h1>
           </div>
-    
-          <div class="col-sm-2 d-flex justify-content-center align-items-center">
-            <h5 class="mt-1 me-1">Change Theme</h5>
-            <label class="switch">
-              <input type="checkbox" id="chek">
-              <span class="slider round"></span>
-            </label>
-          </div>
         </div>
       </section>
         <nav class="py-0 navbar navbar-expand-lg bg-Nav">
@@ -75,12 +67,26 @@
           <main>
             <section class="full-body Featured">
               <h2 class="text-center display-5 fw-bold">Your Cart</h2>
+              <p class="lead text-center">Explore your curated collection of vibrant artworks at Color My World's Cart Page. Elevate your space with our diverse range of paintings, sculptures, and more. Experience seamless checkout and add a splash of color to your world</p>
             
     
               <!-- Cart Products -->
               <div id="cartProducts" class="container">
                 <!-- Products will be dynamically added here -->
               </div>
+            
+                <!-- Empty cart notification -->
+                <div id="emptyCartNotification" class="alert text-center fw-bold alert-warning" style="display: none;" role="alert">
+                    Your cart is empty.
+                </div>
+            
+                <!-- After purchase options -->
+                <div id="purchaseOptions" style="display: none;">
+                    <div class="d-flex justify-content-center m-1">
+                        <button id="continueShoppingBtn" class="btn btn-primary me-3">Continue Shopping</button>
+                        <a href="../index.html" class="btn btn-secondary">Home</a>
+                    </div>
+                </div>
             
               <div total-price></div>
             

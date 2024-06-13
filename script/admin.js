@@ -1,3 +1,4 @@
+  
 let products = JSON.parse(localStorage.getItem("products")) || [];
 
 function saveProducts() {
@@ -9,47 +10,28 @@ function displayProducts() {
     productList.innerHTML = "";
 
     products.forEach((product, index) => {
-        const listItem = document.createElement("li");
-        listItem.innerHTML = `
-            <div>
-                <label for="productName">Image:</label>
-                <input type="text" id="productImg${index}" value="${product.artwork_Img}" required>
-            </div>
-            <div>
-                <label for="productName">Name:</label>
-                <input type="text" id="productName${index}" value="${product.artwork_Name}" required>
-            </div>
-            <div>
-                <label for="productArtist">Artist:</label>
-                <input type="text" id="productArtist${index}" value="${product.artwork_Artist}" required>
-            </div>
-            <div>
-                <label for="productPrice">Price:</label>
-                <input type="number" id="productPrice${index}" value="${product.artwork_Price}" required>
-            </div>
-            <div>
-                <label for="productDescription">Description:</label>
-                <textarea id="productDescription${index}" required>${product.artwork_Description}</textarea>
-            </div>
-            <div>
-                <label for="productTheme">Theme:</label>
-                <input type="text" id="productTheme${index}" value="${product.artwork_Theme}" required>
-            </div>
-            <div>
-                <label for="productTarget">Target:</label>
-                <input type="text" id="productTarget${index}" value="${product.artwork_Target}" required>
-            </div>
-            <button onclick="updateProduct(${index})">Update</button>
-            <button onclick="deleteProduct(${index})">Delete</button>
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td><input type="text" class="form-control" id="productImg${index}" value="${product.artwork_Img}" required></td>
+            <td><input type="text" class="form-control" id="productName${index}" value="${product.artwork_Name}" required></td>
+            <td><input type="text" class="form-control" id="productArtist${index}" value="${product.artwork_Artist}" required></td>
+            <td><input type="number" class="form-control" id="productPrice${index}" value="${product.artwork_Price}" required></td>
+            <td><textarea class="form-control" id="productDescription${index}" required>${product.artwork_Description}</textarea></td>
+            <td><input type="text" class="form-control" id="productTheme${index}" value="${product.artwork_Theme}" required></td>
+            <td><input type="text" class="form-control" id="productTarget${index}" value="${product.artwork_Target}" required></td>
+            <td class="d-flex py-4">
+                <button class="btn btn-success me-1" onclick="updateProduct(${index})">Update</button>
+                <button class="btn btn-danger" onclick="deleteProduct(${index})">Delete</button>
+            </td>
         `;
-        productList.appendChild(listItem);
+        productList.appendChild(row);
     });
 }
 
 function addProduct(img, name, artist, price, description, theme, target) {
     const newProduct = {
         id: products.length + 1,
-        artwork_Img: img, // You can add image URL here if available
+        artwork_Img: img,
         artwork_Name: name,
         artwork_Artist: artist,
         artwork_Description: description,
@@ -100,7 +82,7 @@ function deleteProduct(index) {
 
 document.getElementById("productForm").addEventListener("submit", function(event) {
     event.preventDefault();
-    const productImg = document.getElementById(`productImg`).value.trim();
+    const productImg = document.getElementById("productImg").value.trim();
     const productName = document.getElementById("productName").value.trim();
     const productArtist = document.getElementById("productArtist").value.trim();
     const productPrice = document.getElementById("productPrice").value.trim();
@@ -113,15 +95,10 @@ document.getElementById("productForm").addEventListener("submit", function(event
         return;
     }
 
-    addProduct(productImg,productName, productArtist, productPrice, productDescription, productTheme, productTarget);
+    addProduct(productImg, productName, productArtist, productPrice, productDescription, productTheme, productTarget);
     
-    document.getElementById("productImg").value = "";
-    document.getElementById("productName").value = "";
-    document.getElementById("productArtist").value = "";
-    document.getElementById("productPrice").value = "";
-    document.getElementById("productDescription").value = "";
-    document.getElementById("productTheme").value = "";
-    document.getElementById("productTarget").value = "";
+    $('#addProductModal').modal('hide');
+    document.getElementById("productForm").reset();
 });
 
 displayProducts();

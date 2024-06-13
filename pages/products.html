@@ -30,14 +30,6 @@
           <div class="col-sm-8 text-center d-sm-block d-none">
             <h1 class="display-5 fw-bold">Colour My World</h1>
           </div>
-    
-          <div class="col-sm-2 d-flex justify-content-center align-items-center">
-            <h5 class="mt-1 me-1">Change Theme</h5>
-            <label class="switch">
-              <input type="checkbox" id="chek">
-              <span class="slider round"></span>
-            </label>
-          </div>
         </div>
       </section>
         <nav class="py-0 navbar navbar-expand-lg bg-Nav">
@@ -79,7 +71,7 @@
 
           <main>
             <section class="full-body Featured">
-              <h2 class="text-center display-5 fw-bold">View Products</h2>
+              <h1 class="text-center display-5 fw-bold">View Products</h1>
 
               <div class="d-flex justify-content-center">
                 <!-- Search -->
@@ -93,6 +85,8 @@
                 </select>
               </div>
 
+              <p class="lead text-center">Welcome to Color My World! Explore our curated selection of unique artworks from talented artists around the globe. Our diverse collection includes stunning paintings and exclusive prints, ensuring something for every art enthusiast. Find the perfect piece to enhance your space and bring creativity into your life. Discover Color My World today and let art inspire and delight you!</p>
+
                 <div id="product-container" class="row g-2 p-5"></div>
             </div>
 
@@ -102,6 +96,13 @@
               <i class="las la-shopping-cart"></i>
             </div>
 
+            <!-- Spinner -->
+            <div class="text-center" id="loadingSpinner" style="display: none;">
+              <div class="spinner-border text-primary" role="status">
+                  <span class="sr-only">Loading...</span>
+              </div>
+            <!-- Footer -->
+          </div>
             <div id="artworkModals"></div>
           </main>
           
