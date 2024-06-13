@@ -47,13 +47,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Example function to display products
     function displayProducts(products) {
-        const container = document.getElementById('product-container');
-        if (!container) return;
+        const content = document.getElementById('product-container');
+        if (!content) return;
 
-        container.innerHTML = ''; // Clear previous content
+        content.innerHTML = ''; // Clear previous content
+        let modalContainer = document.getElementById("artworkModals");
 
         products.forEach(product => {
-            container.innerHTML += `
+            content.innerHTML += `
                 <div class="col-lg-3 col-md-6">
                     <div class="framework rounded-1">
                         <img src='${product.artwork_Img}'>
@@ -62,12 +63,35 @@ document.addEventListener("DOMContentLoaded", function () {
                             <h5>By: ${product.artwork_Artist}</h5>
                             <h5>Price: $${product.artwork_Price}</h5>
                             <div class="btn-card mb-2">
-                                <button class="shattered-glass-button" onclick='addToCart(${JSON.stringify(product)})'>${product.button_View}</button>
+                                <button class="shattered-glass-button" data-bs-toggle="modal" data-bs-target="#modal${product.id}">${product.button_View}</button>
                                 <button type="button" class="shattered-glass-button" onclick='addToCart(${JSON.stringify(product)})'>${product.button_Add}</button>
                             </div>
                         </div>
                     </div>
                 </div>
+            `
+            ;
+            modalContainer.innerHTML += `
+            <div class="modal fade text-center" id="modal${product.id}" tabindex="-1" aria-labelledby="modalLabel${product.id}" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabel${product.id}">${product.artwork_Name} by ${product.artwork_Artist}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <img class="modal-img" src="${product.artwork_Img}" alt="${product.artwork_Name}" class="img-fluid">
+                    <p>${product.artwork_Description}</p>
+                    <p><strong>Price:</strong> $${product.artwork_Price}</p>
+                    <p><strong>Theme:</strong> ${product.artwork_Theme}</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#modal${products[(product.id + 1) % products.length].id}">Next</button>
+                    <a href="products.html" class="btn btn-secondary">Go to Products Page</a>
+                  </div>
+                </div>
+              </div>
+            </div>
             `;
         });
     }
