@@ -2,7 +2,38 @@
 
 // Retrieve products from localStorage or initialize if not present
 let products = JSON.parse(localStorage.getItem("products")) || [
-  //... your products array
+  {
+    artwork_Artist
+: 
+"Gagik Tadevosyan",
+artwork_Description
+: 
+"Abandoned Ship by Gagik Tadevosyan is a captivating artwork that transports viewers to a desolate realm where time seems to have stopped. Through meticulous attention to detail and masterful use of light and shadow, Tadevosyan depicts a weathered vessel stranded in a barren landscape, evoking a sense of abandonment and mystery. The absence of life within the scene invites contemplation of the ship`s hidden stories and histories, while the artist`s skillful composition and texture add depth and dimension, drawing viewers into a world where reality and imagination merge. With its haunting beauty and thought-provoking themes, Abandoned Ship stands as a testament to Tadevosyan`s talent for evoking emotion and prompting reflection through his art.",
+artwork_Img
+: 
+"https://imaraansheldon.github.io/allImages/ColorMyWorld/Impressionism/abandonedShip_GagikTadevosyan.jpg",
+artwork_Name
+: 
+"Abandoned Ship",
+artwork_Price
+: 
+4000,
+artwork_Target
+: 
+"Highlights",
+artwork_Theme
+: 
+"Impressionism",
+button_Add
+: 
+"Add to Cart",
+button_View
+: 
+"View Artwork",
+id
+: 
+1
+  }
 ];
 
 // Save products to localStorage
