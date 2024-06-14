@@ -191,7 +191,7 @@ id
               "Mihle Lingani",
               artwork_Description
               : 
-              "The Vega Vine Front Cover by Mihle Lingani is a vibrant, modern magazine cover featuring a bold graphic illustration of a person with long hair and large pink sunglasses. Set against a deep purple background with geometric shapes, the cover includes striking text elements like DON'T SETTLE and VEGA VINE, emphasizing themes of collaboration and creative challenges. The design, marked by vivid colors and contemporary typography, creates an engaging and dynamic visual appeal, making it an eye-catching introduction to the magazine`s innovative content.",
+              "The Vega Vine Front Cover by Mihle Lingani is a vibrant, modern magazine cover featuring a bold graphic illustration of a person with long hair and large pink sunglasses. Set against a deep purple background with geometric shapes, the cover includes striking text elements like DON`T SETTLE and VEGA VINE, emphasizing themes of collaboration and creative challenges. The design, marked by vivid colors and contemporary typography, creates an engaging and dynamic visual appeal, making it an eye-catching introduction to the magazine`s innovative content.",
               artwork_Img
               : 
               "https://imaraansheldon.github.io/allImages/ColorMyWorld/Graphic_Design/MihleLingani_4.jpg",
@@ -314,7 +314,7 @@ id
     "Rene Margitte",
     artwork_Description
     : 
-    "\"Académie Morbide\" by René Magritte is a surrealistic painting that juxtaposes the familiar and the bizarre to provoke thought and challenge perceptions. The artwork features a human torso, distinctly anatomical and somewhat unsettling, adorned with various surreal elements that are characteristic of Magritte's style. These elements often include disjointed body parts, incongruous objects, or mysterious landscapes that evoke a sense of unease and curiosity. Magritte's use of such imagery encourages viewers to question the nature of reality and the boundaries between the ordinary and the extraordinary, encapsulating his unique ability to blend the mundane with the morbidly fascinating.",
+    "Académie Morbide by René Magritte is a surrealistic painting that juxtaposes the familiar and the bizarre to provoke thought and challenge perceptions. The artwork features a human torso, distinctly anatomical and somewhat unsettling, adorned with various surreal elements that are characteristic of Magritte`s style. These elements often include disjointed body parts, incongruous objects, or mysterious landscapes that evoke a sense of unease and curiosity. Magritte`s use of such imagery encourages viewers to question the nature of reality and the boundaries between the ordinary and the extraordinary, encapsulating his unique ability to blend the mundane with the morbidly fascinating.",
     artwork_Img
     : 
     "https://imaraansheldon.github.io/allImages/ColorMyWorld/Art/AcademiqueMorbide_ReneMargitte.jpg",
