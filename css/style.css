@@ -304,3 +304,75 @@ td {
   width: 50%;
 }
 /* Modal(end) */
+@media (width < 600px)
+{
+.checkoutTable table, thead, tbody, th, td, tr {
+    display: block;
+}
+.checkoutTable table {
+    margin-bottom: 5rem;
+}
+.checkoutTable thead tr {
+    display: none;
+}
+.checkoutTable tr {
+    margin-bottom: 15px;
+}
+.checkoutTable td {
+  border: 1px solid var(--color-text);
+    position: relative;
+    padding-left: 50%;
+}
+.checkoutTable td:before {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    transform: translateY(-50%);
+}
+.checkoutTable td:nth-of-type(1):before { content: "Image"; }
+.checkoutTable td:nth-of-type(2):before { content: "Name"; }
+.checkoutTable td:nth-of-type(3):before { content: "Artist"; }
+.checkoutTable td:nth-of-type(4):before { content: "Quantity"; }
+.checkoutTable td:nth-of-type(5):before { content: "Amount"; }
+.checkoutTable td:nth-of-type(6):before { content: "Action"; }
+.checkoutTable .total-row td:before { content: ""; }
+.checkoutTable .total-row td:before { content: ""; }
+
+.checkoutTable1 table, thead, tbody, th, td, tr {
+    display: block;
+}
+.checkoutTable1 table {
+    margin-bottom: 5rem;
+}
+.checkoutTable1 thead tr {
+    display: none;
+}
+.checkoutTable1 tr {
+    margin-bottom: 15px;
+}
+.checkoutTable1 td {
+    position: relative;
+    border: 1px solid var(--color-text);
+    padding-left: 50%;
+}
+.checkoutTable1 td:before {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    transform: translateY(-50%);
+}
+.checkoutTable1 td:nth-of-type(1):before { content: "Image"; }
+.checkoutTable1 td:nth-of-type(2):before { content: "Name"; }
+.checkoutTable1 td:nth-of-type(3):before { content: "Artist"; }
+.checkoutTable1 td:nth-of-type(4):before { content: "Quantity"; }
+.checkoutTable1 td:nth-of-type(5):before { content: "Amount"; }
+.checkoutTable1 td:nth-of-type(6):before { content: "Action"; }
+.checkoutTable1 .total-row td:before { content: ""; }
+.checkoutTable1 .total-row td:before { content: ""; }
+}

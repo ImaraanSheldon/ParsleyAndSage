@@ -18,7 +18,7 @@ function displayCartProducts() {
     
     // Create a table element with Bootstrap classes for responsiveness
     let table = document.createElement('table');
-    table.classList.add('table', 'table-bordered', 'table-responsive');
+    table.classList.add('table', 'table-bordered', 'table-responsive', 'checkoutTable');
 
     // Create table header
     let thead = document.createElement('thead');
